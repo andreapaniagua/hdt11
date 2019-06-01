@@ -1,5 +1,6 @@
+//Juan Diego Solorzano y Andrea Paniagua
 public class FloydNew {
-    //Copiado de: https://www.geeksforgeeks.org/floyd-warshall-algorithm-dp-16/
+    //Extraido de: https://www.geeksforgeeks.org/floyd-warshall-algorithm-dp-16/
     final static int INF = 99999;
     private Integer matrixSize;
     Integer [][] sequence;
