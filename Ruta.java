@@ -1,3 +1,4 @@
+//Juan Diego Solorzano y Andrea Paniagua
 public class Ruta {
     private String destino;
     private String fuente;
