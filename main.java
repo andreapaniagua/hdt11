@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class main {
-    public static Integer[] findCenter(Integer[][] matrix){
+    public static Integer[] encontrarCentro(Integer[][] matrix){
         Integer currentCenter = 1000;
         Integer[] currentCoordinates = new Integer[2];
 
@@ -26,7 +26,7 @@ public class main {
         }
         return currentCoordinates;
     }
-    public static ArrayList<Integer> findRoute(Integer[][] sequence, Integer origin, Integer destiny){
+    public static ArrayList<Integer> encontrarRuta(Integer[][] sequence, Integer origin, Integer destiny){
         ArrayList<Integer> allSteps = new ArrayList<>();
         Integer nextOut = origin;
         while (!sequence[nextOut][destiny].equals(destiny)){
@@ -36,7 +36,7 @@ public class main {
         allSteps.add(sequence[nextOut][destiny]);
         return allSteps;
     }
-    public static String findCityName(HashMap<String, Integer> map, Integer toBeChecked){
+    public static String encontrarNombre(HashMap<String, Integer> map, Integer toBeChecked){
         //codigo tomado de: https://www.geeksforgeeks.org/iterate-map-java/
         for (Map.Entry<String, Integer> entry: map.entrySet()){
             if (entry.getValue().equals(toBeChecked)){
@@ -49,7 +49,7 @@ public class main {
     public static void main (String[]args) {
         String toSplit = "";
         String[] parts = new String[3];
-        ArrayList<Route> routes = new ArrayList<>();
+        ArrayList<Ruta> routes = new ArrayList<>();
         HashMap<String, Integer> cities = new HashMap<>();
         Integer current = 0;
         Integer[][] distancesMatrix;
@@ -65,7 +65,7 @@ public class main {
             while ((st = br.readLine()) != null) {
                 toSplit = st;
                 parts = toSplit.split(",");
-                routes.add(new Route(parts[0], parts[1], Integer.valueOf(parts[2])));
+                routes.add(new Ruta(parts[0], parts[1], Integer.valueOf(parts[2])));
             }
         } catch (FileNotFoundException e) {
             System.out.print("No se encontró el archivo");
@@ -73,13 +73,13 @@ public class main {
             System.out.println("Algo más salió maln favor intentar nuevamente");
         }
 
-        for (Route r : routes) {
-            if (!cities.containsKey(r.getSource())) {
-                cities.put(r.getSource(), current);
+        for (Ruta r: routes) {
+            if (!cities.containsKey(r.getFuente())) {
+                cities.put(r.getFuente(), current);
                 current++;
             }
-            if (!cities.containsKey(r.getDestination())) {
-                cities.put(r.getDestination(), current);
+            if (!cities.containsKey(r.getDestino())) {
+                cities.put(r.getDestino(), current);
                 current++;
             }
         }
@@ -88,9 +88,9 @@ public class main {
 
 
 
-        //Armar matriz de distancias
-        for (Route r : routes) {
-            distancesMatrix[cities.get(r.getSource())][cities.get(r.getDestination())] = r.getLength();
+        //distnacias
+        for (Ruta  : routes) {
+            distancesMatrix[cities.get(r.getFuente())][cities.get(r.getDestino())] = r.getDistancia();
         }
 
         for (int i = 0; i < distancesMatrix.length; i++) {
@@ -104,7 +104,7 @@ public class main {
             }
         }
 
-        Floyd2 floyd = new Floyd2(distancesMatrix.length);
+        FloydNew floyd = new FloydNew(distancesMatrix.length);
         Integer [][] result = floyd.floydWarshall(distancesMatrix);
         Integer [][] sequence = floyd.getSequence();
 
@@ -135,8 +135,8 @@ public class main {
 
                         System.out.println("La ruta sale de: " + origin);
 
-                        for (Integer i: findRoute(sequence,cities.get(origin), cities.get(destiny))){
-                            System.out.println("Pasa por " + findCityName(cities, i));
+                        for (Integer i: encontrarRuta(sequence,cities.get(origin), cities.get(destiny))){
+                            System.out.println("Pasa por " + encontrarNombre(cities, i));
                         }
                         System.out.println("Y termina en " + destiny);
                     }catch (NullPointerException e){
@@ -144,7 +144,7 @@ public class main {
                     }
                     break;
                 case "2":
-                    System.out.println("El centro de su grafo es " + findCityName(cities,findCenter(distancesMatrix)[1]));
+                    System.out.println("El centro de su grafo es " + encontrarNombre(cities,findCenter(distancesMatrix)[1]));
                     break;
                 case "3":
                     //interrupción de tráfico
