@@ -89,7 +89,7 @@ public class main {
 
 
         //distnacias
-        for (Ruta  : routes) {
+        for (Ruta r : routes) {
             distancesMatrix[cities.get(r.getFuente())][cities.get(r.getDestino())] = r.getDistancia();
         }
 
@@ -144,7 +144,7 @@ public class main {
                     }
                     break;
                 case "2":
-                    System.out.println("El centro de su grafo es " + encontrarNombre(cities,findCenter(distancesMatrix)[1]));
+                    System.out.println("El centro de su grafo es " + encontrarNombre(cities,encontrarCentro(distancesMatrix)[1]));
                     break;
                 case "3":
                     //interrupción de tráfico
