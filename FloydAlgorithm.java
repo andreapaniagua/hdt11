@@ -1,3 +1,4 @@
+//Juan Diego Solorzano y Andrea Paniagua
 public class FloydAlgorithm {
     private int[][] distanceMatrix;
     private Integer[][] sequenceMatrix;
