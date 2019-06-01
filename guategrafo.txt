@@ -1,0 +1,230 @@
+Ciudad de Guatemala,Antigua Guatemala,77
+Ciudad de Guatemala,Barberena,28
+Ciudad de Guatemala,Chichicastenango,23
+Ciudad de Guatemala,Chimaltenango,62
+Ciudad de Guatemala,Chiquimula,58
+Ciudad de Guatemala,Coatepeque,33
+Ciudad de Guatemala,Coban,92
+Ciudad de Guatemala,Escuintla,94
+Ciudad de Guatemala,Huehuetenango,7
+Ciudad de Guatemala,Jacaltenango,74
+Ciudad de Guatemala,Jalapa,37
+Ciudad de Guatemala,Jutiapa,35
+Ciudad de Guatemala,Mazatenango,98
+Ciudad de Guatemala,Mixco,22
+Ciudad de Guatemala,Petapa,76
+Ciudad de Guatemala,Puerto Barrios,87
+Ciudad de Guatemala,Quetzaltenango,35
+Ciudad de Guatemala,Retalhuleu,86
+Ciudad de Guatemala,San Benito,96
+Ciudad de Guatemala,San Francisco El Alto,37
+Ciudad de Guatemala,San Juan Sacatepequez,99
+Ciudad de Guatemala,San Miguel Chicaj,51
+Ciudad de Guatemala,San Pedro Sacatepequez,29
+Ciudad de Guatemala,Sanarate,30
+Ciudad de Guatemala,Santa Lucia Cotzumalguapa,51
+Ciudad de Guatemala,Solola,92
+Ciudad de Guatemala,Totonicapan,64
+Ciudad de Guatemala,Villa Nueva,81
+Ciudad de Guatemala,Zacapa,42
+Antigua Guatemala,Ciudad de Guatemala,94
+Antigua Guatemala,Barberena,39
+Antigua Guatemala,Chichicastenango,67
+Antigua Guatemala,Chimaltenango,66
+Antigua Guatemala,Chiquimula,83
+Antigua Guatemala,Coatepeque,67
+Antigua Guatemala,Coban,94
+Antigua Guatemala,Escuintla,6
+Antigua Guatemala,Huehuetenango,43
+Antigua Guatemala,Jacaltenango,88
+Antigua Guatemala,Jalapa,100
+Antigua Guatemala,Jutiapa,94
+Antigua Guatemala,Mazatenango,67
+Antigua Guatemala,Mixco,101
+Antigua Guatemala,Petapa,43
+Antigua Guatemala,Puerto Barrios,8
+Antigua Guatemala,Quetzaltenango,47
+Antigua Guatemala,Retalhuleu,43
+Antigua Guatemala,San Benito,29
+Antigua Guatemala,San Francisco El Alto,28
+Antigua Guatemala,San Juan Sacatepequez,11
+Antigua Guatemala,San Miguel Chicaj,63
+Antigua Guatemala,San Pedro Sacatepequez,96
+Antigua Guatemala,Sanarate,30
+Antigua Guatemala,Santa Lucia Cotzumalguapa,101
+Antigua Guatemala,Solola,30
+Antigua Guatemala,Totonicapan,77
+Antigua Guatemala,Villa Nueva,1
+Antigua Guatemala,Zacapa,53
+Barberena,Ciudad de Guatemala,37
+Barberena,Antigua Guatemala,78
+Barberena,Chichicastenango,95
+Barberena,Chimaltenango,80
+Barberena,Chiquimula,29
+Barberena,Coatepeque,28
+Barberena,Coban,58
+Barberena,Escuintla,79
+Barberena,Huehuetenango,17
+Barberena,Jacaltenango,4
+Barberena,Jalapa,59
+Barberena,Jutiapa,36
+Barberena,Mazatenango,92
+Barberena,Mixco,28
+Barberena,Petapa,96
+Barberena,Puerto Barrios,62
+Barberena,Quetzaltenango,95
+Barberena,Retalhuleu,42
+Barberena,San Benito,6
+Barberena,San Francisco El Alto,51
+Barberena,San Juan Sacatepequez,37
+Barberena,San Miguel Chicaj,25
+Barberena,San Pedro Sacatepequez,92
+Barberena,Sanarate,60
+Barberena,Santa Lucia Cotzumalguapa,60
+Barberena,Solola,63
+Barberena,Totonicapan,12
+Barberena,Villa Nueva,29
+Barberena,Zacapa,101
+Chichicastenango,Ciudad de Guatemala,81
+Chichicastenango,Antigua Guatemala,95
+Chichicastenango,Barberena,63
+Chichicastenango,Chimaltenango,101
+Chichicastenango,Chiquimula,77
+Chichicastenango,Coatepeque,28
+Chichicastenango,Coban,42
+Chichicastenango,Escuintla,75
+Chichicastenango,Huehuetenango,2
+Chichicastenango,Jacaltenango,41
+Chichicastenango,Jalapa,69
+Chichicastenango,Jutiapa,18
+Chichicastenango,Mazatenango,55
+Chichicastenango,Mixco,2
+Chichicastenango,Petapa,35
+Chichicastenango,Puerto Barrios,83
+Chichicastenango,Quetzaltenango,94
+Chichicastenango,Retalhuleu,19
+Chichicastenango,San Benito,65
+Chichicastenango,San Francisco El Alto,10
+Chichicastenango,San Juan Sacatepequez,39
+Chichicastenango,San Miguel Chicaj,78
+Chichicastenango,San Pedro Sacatepequez,27
+Chichicastenango,Sanarate,95
+Chichicastenango,Santa Lucia Cotzumalguapa,20
+Chichicastenango,Solola,51
+Chichicastenango,Totonicapan,21
+Chichicastenango,Villa Nueva,2
+Chichicastenango,Zacapa,81
+Chimaltenango,Ciudad de Guatemala,14
+Chimaltenango,Antigua Guatemala,78
+Chimaltenango,Barberena,82
+Chimaltenango,Chichicastenango,61
+Chimaltenango,Chiquimula,94
+Chimaltenango,Coatepeque,6
+Chimaltenango,Coban,83
+Chimaltenango,Escuintla,96
+Chimaltenango,Huehuetenango,13
+Chimaltenango,Jacaltenango,86
+Chimaltenango,Jalapa,100
+Chimaltenango,Jutiapa,20
+Chimaltenango,Mazatenango,45
+Chimaltenango,Mixco,61
+Chimaltenango,Petapa,60
+Chimaltenango,Puerto Barrios,46
+Chimaltenango,Quetzaltenango,69
+Chimaltenango,Retalhuleu,66
+Chimaltenango,San Benito,14
+Chimaltenango,San Francisco El Alto,83
+Chimaltenango,San Juan Sacatepequez,97
+Chimaltenango,San Miguel Chicaj,97
+Chimaltenango,San Pedro Sacatepequez,48
+Chimaltenango,Sanarate,27
+Chimaltenango,Santa Lucia Cotzumalguapa,84
+Chimaltenango,Solola,101
+Chimaltenango,Totonicapan,70
+Chimaltenango,Villa Nueva,44
+Chimaltenango,Zacapa,38
+Chiquimula,Ciudad de Guatemala,29
+Chiquimula,Antigua Guatemala,53
+Chiquimula,Barberena,35
+Chiquimula,Chichicastenango,90
+Chiquimula,Chimaltenango,77
+Chiquimula,Coatepeque,75
+Chiquimula,Coban,72
+Chiquimula,Escuintla,10
+Chiquimula,Huehuetenango,60
+Chiquimula,Jacaltenango,83
+Chiquimula,Jalapa,7
+Chiquimula,Jutiapa,38
+Chiquimula,Mazatenango,92
+Chiquimula,Mixco,49
+Chiquimula,Petapa,20
+Chiquimula,Puerto Barrios,42
+Chiquimula,Quetzaltenango,2
+Chiquimula,Retalhuleu,15
+Chiquimula,San Benito,90
+Chiquimula,San Francisco El Alto,96
+Chiquimula,San Juan Sacatepequez,25
+Chiquimula,San Miguel Chicaj,61
+Chiquimula,San Pedro Sacatepequez,48
+Chiquimula,Sanarate,81
+Chiquimula,Santa Lucia Cotzumalguapa,53
+Chiquimula,Solola,51
+Chiquimula,Totonicapan,3
+Chiquimula,Villa Nueva,88
+Chiquimula,Zacapa,93
+Coatepeque,Ciudad de Guatemala,8
+Coatepeque,Antigua Guatemala,96
+Coatepeque,Barberena,77
+Coatepeque,Chichicastenango,19
+Coatepeque,Chimaltenango,81
+Coatepeque,Chiquimula,76
+Coatepeque,Coban,22
+Coatepeque,Escuintla,42
+Coatepeque,Huehuetenango,70
+Coatepeque,Jacaltenango,94
+Coatepeque,Jalapa,52
+Coatepeque,Jutiapa,6
+Coatepeque,Mazatenango,28
+Coatepeque,Mixco,58
+Coatepeque,Petapa,55
+Coatepeque,Puerto Barrios,76
+Coatepeque,Quetzaltenango,17
+Coatepeque,Retalhuleu,2
+Coatepeque,San Benito,32
+Coatepeque,San Francisco El Alto,43
+Coatepeque,San Juan Sacatepequez,49
+Coatepeque,San Miguel Chicaj,49
+Coatepeque,San Pedro Sacatepequez,87
+Coatepeque,Sanarate,81
+Coatepeque,Santa Lucia Cotzumalguapa,101
+Coatepeque,Solola,44
+Coatepeque,Totonicapan,42
+Coatepeque,Villa Nueva,75
+Coatepeque,Zacapa,78
+Coban,Ciudad de Guatemala,56
+Coban,Antigua Guatemala,56
+Coban,Barberena,63
+Coban,Chichicastenango,17
+Coban,Chimaltenango,57
+Coban,Chiquimula,61
+Coban,Coatepeque,28
+Coban,Escuintla,28
+Coban,Huehuetenango,91
+Coban,Jacaltenango,8
+Coban,Jalapa,83
+Coban,Jutiapa,17
+Coban,Mazatenango,15
+Coban,Mixco,20
+Coban,Petapa,72
+Coban,Puerto Barrios,73
+Coban,Quetzaltenango,64
+Coban,Retalhuleu,43
+Coban,San Benito,82
+Coban,San Francisco El Alto,34
+Coban,San Juan Sacatepequez,10
+Coban,San Miguel Chicaj,59
+Coban,San Pedro Sacatepequez,26
+Coban,Sanarate,85
+Coban,Santa Lucia Cotzumalguapa,26
+Coban,Solola,56
+Coban,Totonicapan,9
