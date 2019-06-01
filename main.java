@@ -4,193 +4,166 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class main {
+//Juan Diego Solorzano y Andrea Paniagua
+//Extraido de: https://www.geeksforgeeks.org/iterate-map-java/
+
+public class Main {
     public static Integer[] encontrarCentro(Integer[][] matrix){
-        Integer currentCenter = 1000;
-        Integer[] currentCoordinates = new Integer[2];
+        Integer cCenter = 1000;
+        Integer[] cCoordinates = new Integer[2];
 
         for (int i = 0; i < matrix.length; i++){
-            Integer currentBiggest = 0;
-            Integer[] cBCoordinates = new Integer[2];
+            Integer cBiggest = 0;
+            Integer[] Cordenadas = new Integer[2];
             for (int j = 0; j <matrix.length; j++){
-                if (matrix[j][i] > currentBiggest){
-                    currentBiggest = matrix[j][i];
-                    cBCoordinates[0] = j;
-                    cBCoordinates[1] = i;
+                if (matrix[j][i] > cBiggest){
+                    cBiggest = matrix[j][i];
+                    Cordenadas[0] = j;
+                    Cordenadas[1] = i;
                 }
             }
-            if (currentBiggest < currentCenter){
-                currentCenter = currentBiggest;
-                currentCoordinates = cBCoordinates;
+            if (cBiggest < cCenter){
+                cCenter = cBiggest;
+                cCoordinates = Cordenadas;
             }
         }
-        return currentCoordinates;
+        return cCoordinates;
     }
-    public static ArrayList<Integer> encontrarRuta(Integer[][] sequence, Integer origin, Integer destiny){
-        ArrayList<Integer> allSteps = new ArrayList<>();
-        Integer nextOut = origin;
-        while (!sequence[nextOut][destiny].equals(destiny)){
-            allSteps.add(sequence[nextOut][destiny]);
-            nextOut = sequence[nextOut][destiny];
+    public static ArrayList<Integer> encontrarRuta(Integer[][] seq, Integer actual, Integer destino){
+        ArrayList<Integer> res = new ArrayList<>();
+        Integer next = actual;
+        while (!seq[next][destino].equals(destino)){
+            res.add(seq[next][destino]);
+            next = seq[next][destino];
         }
-        allSteps.add(sequence[nextOut][destiny]);
-        return allSteps;
+        res.add(seq[next][destino]);
+        return res;
     }
     public static String encontrarNombre(HashMap<String, Integer> map, Integer toBeChecked){
-        //codigo tomado de: https://www.geeksforgeeks.org/iterate-map-java/
         for (Map.Entry<String, Integer> entry: map.entrySet()){
             if (entry.getValue().equals(toBeChecked)){
                 return entry.getKey();
             }
         }
-        return "lol";
+        String err = "No se encontro";
+        return err;
     }
 
     public static void main (String[]args) {
-        String toSplit = "";
-        String[] parts = new String[3];
-        ArrayList<Ruta> routes = new ArrayList<>();
-        HashMap<String, Integer> cities = new HashMap<>();
+
+
+        ArrayList<Ruta> ruta = new ArrayList<>();
+        HashMap<String, Integer> lugares = new HashMap<>();
         Integer current = 0;
+
         Integer[][] distancesMatrix;
-        Integer[][] sequenceMatrix;
+
         boolean wantsToContinue = true;
 
         try {
+            String[] valores = new String[3];
             File file = new File("guategrafo.txt");
 
             BufferedReader br = new BufferedReader(new FileReader(file));
 
             String st;
+            String s = "";
             while ((st = br.readLine()) != null) {
-                toSplit = st;
-                parts = toSplit.split(",");
-                routes.add(new Ruta(parts[0], parts[1], Integer.valueOf(parts[2])));
+                s = st;
+                valores = s.split(",");
+                ruta.add(new Ruta(valores[0], valores[1], Integer.valueOf(valores[2])));
             }
         } catch (FileNotFoundException e) {
-            System.out.print("No se encontró el archivo");
+            System.out.print("No existe el archivo");
         } catch (IOException e) {
-            System.out.println("Algo más salió maln favor intentar nuevamente");
+            System.out.println("Error");
         }
 
-        for (Ruta r: routes) {
-            if (!cities.containsKey(r.getFuente())) {
-                cities.put(r.getFuente(), current);
+        for (Ruta r : ruta) {
+            if (!lugares.containsKey(r.getFuente())) {
+                lugares.put(r.getFuente(), current);
                 current++;
             }
-            if (!cities.containsKey(r.getDestino())) {
-                cities.put(r.getDestino(), current);
+            if (!lugares.containsKey(r.getDestino())) {
+                lugares.put(r.getDestino(), current);
                 current++;
             }
         }
-
-        distancesMatrix = new Integer[cities.size()][cities.size()];
-
-
-
-        //distnacias
-        for (Ruta r : routes) {
-            distancesMatrix[cities.get(r.getFuente())][cities.get(r.getDestino())] = r.getDistancia();
+        distancesMatrix = new Integer[lugares.size()][lugares.size()];
+        for (Ruta r : ruta) {
+            distancesMatrix[lugares.get(r.getFuente())][lugares.get(r.getDestino())] = r.getDistancia();
         }
 
         for (int i = 0; i < distancesMatrix.length; i++) {
             for (int j = 0; j < distancesMatrix.length; j++) {
                 if (distancesMatrix[i][j] == null && i != j) {
                     distancesMatrix[i][j] = 99999;
-                }
-                else if (distancesMatrix[i][j] == null && i == j){
+                } else if (distancesMatrix[i][j] == null && i == j) {
                     distancesMatrix[i][j] = 0;
                 }
             }
         }
 
         FloydNew floyd = new FloydNew(distancesMatrix.length);
-        Integer [][] result = floyd.floydWarshall(distancesMatrix);
-        Integer [][] sequence = floyd.getSequence();
+        Integer[][] resultado = floyd.floydWarshall(distancesMatrix);
+        Integer[][] secuencia = floyd.getSequence();
 
-        floyd.printSolution(result);
-        do {
-            Scanner myObj = new Scanner(System.in);  // Create a Scanner object
+        floyd.printSolution(resultado);
+        Scanner sc = new Scanner(System.in);
+        //Menu
+        int opc = 0;
+        while (opc != 5) {
+            System.out.println("Menu: \n"
+                    + "1. Distancia entre dos ciudades ingresadas \n"
+                    + "2. Encontrar el centro de grafo \n"
+                    + "3. Nueva relacion entre dos ciudades \n"
+                    + "4. Agregar interrupcion de trafico entre dos ciudades \n"
+                    + "5. Salir \n"
 
-            System.out.println("Ingrese la opción que desee ejecutar");
-            System.out.println("1. Encontrar distancia entre dos ciudades");
-            System.out.println("2. Encontrar centro del grafo");
-            System.out.println("3. Ingresar interrupción de tráfico");
-            System.out.println("4. Ingresar nueva distancia entre rutas");
-            System.out.println("5. Salir");
+            );
+            opc = sc.nextInt();
+            if (opc > 5 || opc < 1) {
+                System.out.println("Valor invalido, intente de nuevo");
+            } else {
+                if (opc == 1) {
+                    System.out.println("Nombre de ciudad origen");
+                    String opc2 = sc.nextLine();
+                    System.out.println("Nombre de ciudad destino");
+                    String opc3 = sc.nextLine();
 
-            String nextOption = myObj.nextLine();
+                    int res = resultado[lugares.get(opc2)][lugares.get(opc3)];
+                    System.out.println("La distancia entre ambas ciudades es de " + res + "Km \n");
+                } else if (opc == 2) {
+                    String centro = encontrarNombre(lugares, encontrarCentro(distancesMatrix)[1]);
+                    System.out.println("El centro es: " + centro + "\n");
+                } else if (opc == 3) {
+                    System.out.println("Ingrese la ciudad origen");
+                    String origen = sc.nextLine();
 
-            switch(nextOption){
-                case "1":
-                    System.out.println("Favor ingrese su ciudad de salida");
+                    System.out.println("Ingrese la ciudad destino");
+                    String destino = sc.nextLine();
 
-                    String origin = myObj.nextLine();
+                    System.out.println("Ingrese la distancia entre ambas ciudades");
 
-                    System.out.println("Favor ingrese su ciudad de destino");
+                    int distancia = sc.nextInt();
+                    distancesMatrix[lugares.get(origen)][lugares.get(destino)] = Integer.valueOf(distancia);
+                    resultado = floyd.floydWarshall(distancesMatrix);
+                    floyd.printSolution(resultado);
 
-                    String destiny = myObj.nextLine();
-                    try{
-                        System.out.println("La ruta más corta es de: " + result[cities.get(origin)][cities.get(destiny)]);
+                } else if (opc == 4) {
+                    System.out.println("Ingrese la ciudad origen del trafico");
+                    String orig = sc.nextLine();
 
-                        System.out.println("La ruta sale de: " + origin);
+                    System.out.println("Ingrese la ciudad destino");
+                    String dest = sc.nextLine();
 
-                        for (Integer i: encontrarRuta(sequence,cities.get(origin), cities.get(destiny))){
-                            System.out.println("Pasa por " + encontrarNombre(cities, i));
-                        }
-                        System.out.println("Y termina en " + destiny);
-                    }catch (NullPointerException e){
-                        System.out.println("Las ciudades ingresadas no existen, favor intentar nuevamente");
-                    }
-                    break;
-                case "2":
-                    System.out.println("El centro de su grafo es " + encontrarNombre(cities,encontrarCentro(distancesMatrix)[1]));
-                    break;
-                case "3":
-                    //interrupción de tráfico
-                    System.out.println("Favor ingrese su ciudad de salida de la ruta interrumpida");
+                    distancesMatrix[lugares.get(orig)][lugares.get(dest)] = 99999;
+                    resultado = floyd.floydWarshall(distancesMatrix);
 
-                    String originInterrupted = myObj.nextLine();
 
-                    System.out.println("Favor ingrese su ciudad de destino de la ruta interrumpida");
-
-                    String destinyInterrupted = myObj.nextLine();
-                    try{
-                        distancesMatrix[cities.get(originInterrupted)][cities.get(destinyInterrupted)] = 99999;
-                        result = floyd.floydWarshall(distancesMatrix);
-                    }catch (NullPointerException e){
-                        System.out.println("Las ciudades ingresadas no existen, favor intentar nuevamente");
-                    }
-                    break;
-                case "4":
-                    System.out.println("Favor ingrese su ciudad de salida de la ruta cambiada");
-
-                    String originChanged = myObj.nextLine();
-
-                    System.out.println("Favor ingrese su ciudad de destino de la ruta cambiada");
-
-                    String destinyChanged = myObj.nextLine();
-
-                    System.out.println("Favor ingrese la nueva distancia");
-
-                    String newLength = myObj.nextLine();
-                    try{
-                        distancesMatrix[cities.get(originChanged)][cities.get(destinyChanged)] = Integer.valueOf(newLength);
-                        result = floyd.floydWarshall(distancesMatrix);
-                        floyd.printSolution(result);
-                    }catch (NullPointerException e){
-                        System.out.println("Las ciudades ingresadas no existen, favor intentar nuevamente");
-                    }catch (NumberFormatException e){
-                        System.out.println("Distancia no válida");
-                    }
-                    break;
-                case "5":
-                    wantsToContinue = false;
-                    break;
-                default:
-                    System.out.println("Ingreso no válido, favor intentar nuevamente");
+                }
             }
-
-        }while (wantsToContinue);
+        }
+        System.out.println("Gracias por utilizar el programa");
     }
 }
